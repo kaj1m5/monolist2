@@ -1,6 +1,11 @@
+<% content_for :head do %>
+  <title> Want - Ranking - monolist</title>
+  <meta name="description" content="欲しい(Want)人が多いモノのランキングです．">
+<% end %>
+
 <div class="container">
   <div class="container-inner inner-default clearfix">
-    <% @items.each do |item| %>
+    <% @items.each_with_index do |item, i| %>
       <div class="item-box">
         <div class="image">
           <div class="img-wrap">
@@ -13,6 +18,7 @@
         </div>
         <div class="detail">
           <p class="title">
+            <strong class="ranking"><%= "第#{i+1}位" %></strong>
             <%= item.title %>
           </p>
         </div>
